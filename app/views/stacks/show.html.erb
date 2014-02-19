@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @stack.title %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @stack.subject %>
+</p>
+
+<% @stack.cards.each do |card| %>
+	<%= card.front %>
+	<%= card.back %>
+<% end %>
+
+<%= link_to 'Study', study_stack_path(@stack) %> |
+<%= link_to 'Edit', edit_stack_path(@stack) %> |
+<%= link_to 'Back', stacks_path %>

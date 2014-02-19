@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= @stack.title %>
+<%= will_paginate @cards, :page_links => false %>
+<% for card in @cards %>
+	<div id="<%= dom_id(card) %>" class="card">
+		<div class="front">
+			<%= card.front %>
+		</div>
+		<div class="back hideme">
+			<%= card.back %>
+		</div>
+	</div>
+<% end %>

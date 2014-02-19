@@ -1,0 +1,30 @@
+<%= simple_nested_form_for @stack do |f| %>
+  <% if @stack.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stack.errors.count, "error") %> prohibited this stack from being saved:</h2>
+
+      <ul>
+      <% @stack.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :title %>
+  </div>
+  <div class="field">
+    <%= f.input :subject %>
+  </div>
+  
+  <%= f.simple_fields_for :cards, @stack.cards_for_form do |builder|%>
+  	<%= render 'card_fields', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Answer", f, :cards %>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

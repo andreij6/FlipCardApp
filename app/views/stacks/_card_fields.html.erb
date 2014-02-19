@@ -1,0 +1,7 @@
+<fieldset>
+	<%= f.input :front, label: "Front" %><br />
+	<%= f.input :back, label: "Back" %><br />
+	<% f.input :stack_id, input_html: { value: @stack.id, as: :hidden }%>
+	<%= f.hidden_field :_destroy %>
+	<%= link_to "Remove Card", "#", class: "remove_fields"%>
+</fieldset>

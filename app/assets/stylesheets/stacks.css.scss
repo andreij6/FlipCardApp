@@ -1,0 +1,20 @@
+// Place all the styles related to the Stacks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.front {
+  background: green;
+  height: 100px;
+  width: 100px;
+}
+
+.back {
+  background: yellow;
+  height: 100px;
+  width: 100px;
+}
+
+.hideme {
+  display: none
+}
+
